@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,8 +8,16 @@ public class LevelController : MonoBehaviour
     private string currentLevel;
     private Transform currentSlot;
     public bool Debug;
+    private bool canSelect;
+
+    private void Awake()
+    {
+        canSelect = true;
+    }
+
     public void OnSlotTriggered(Transform slotTransform, string levelName)
     {
+        if(!canSelect)return;
         currentLevel = levelName;
         Invoke(nameof(ChangeScene), 1);
         if (currentSlot)
@@ -27,11 +36,13 @@ public class LevelController : MonoBehaviour
     private void SelectSlot(Transform trans)
     {
         currentSlot = trans;
-        trans.DOMoveX(2, .15f).SetRelative(true).SetEase(Ease.OutBack).Play();
+        canSelect = false;
+        trans.DOMoveX(2, .15f).SetRelative(true).SetEase(Ease.OutBack).OnComplete(()=>canSelect = true);
     }
+
     private void DeselectSlot(Transform trans)
     {
         currentSlot = null;
-        trans.DOMoveX(-2, .15f).SetRelative(true).SetEase(Ease.OutBack).Play();
+        trans.DOMoveX(-2, .15f).SetRelative(true).SetEase(Ease.OutBack).OnComplete(() => canSelect = true);
     }
 }
