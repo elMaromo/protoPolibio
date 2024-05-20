@@ -388,6 +388,111 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 831983289}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1054646926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1054646930}
+  - component: {fileID: 1054646929}
+  - component: {fileID: 1054646928}
+  - component: {fileID: 1054646927}
+  m_Layer: 7
+  m_Name: Wall1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1054646927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054646926}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1054646928
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054646926}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7f225eb479026254b9948cb805151eca, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1054646929
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054646926}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1054646930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054646926}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.163, y: 1.44, z: 4.0515404}
+  m_LocalScale: {x: 2.60888, y: 5.89, z: 0.15502}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1273815646
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,15 +774,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 330008041694714950, guid: cd0b4ae9d96569849b96d3b7f3ede7c6,
+    - target: {fileID: 919897801056744213, guid: cd0b4ae9d96569849b96d3b7f3ede7c6,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: placeToPlay
       value: 
-      objectReference: {fileID: 1782602122}
-    - target: {fileID: 330008041694714950, guid: cd0b4ae9d96569849b96d3b7f3ede7c6,
+      objectReference: {fileID: 831983290}
+    - target: {fileID: 919897801056744213, guid: cd0b4ae9d96569849b96d3b7f3ede7c6,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MoveToPlayPlace
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1273815649}
+    - target: {fileID: 919897801056744213, guid: cd0b4ae9d96569849b96d3b7f3ede7c6,
+        type: 3}
+      propertyPath: nextSceneName
+      value: LevelSelector
       objectReference: {fileID: 0}
     - target: {fileID: 3013589363275082563, guid: cd0b4ae9d96569849b96d3b7f3ede7c6,
         type: 3}
@@ -784,49 +894,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 8324192237845584453, guid: cd0b4ae9d96569849b96d3b7f3ede7c6,
-        type: 3}
-      propertyPath: m_VertexColorAlwaysGammaSpace
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8324192237845584453, guid: cd0b4ae9d96569849b96d3b7f3ede7c6,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 31
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8495074225230449322, guid: cd0b4ae9d96569849b96d3b7f3ede7c6, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5238373023463121384, guid: cd0b4ae9d96569849b96d3b7f3ede7c6,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1782602122}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd0b4ae9d96569849b96d3b7f3ede7c6, type: 3}
---- !u!1 &1782602116 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5238373023463121384, guid: cd0b4ae9d96569849b96d3b7f3ede7c6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1782602115}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1782602122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782602116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 648fbacc91a158b46b37f1d1d4a31098, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placeToPlay: {fileID: 831983290}
-  playerCamera: {fileID: 1273815649}
-  nextSceneName: Level1Alberto
-  timeToMove: 0.3
-  howCloseToTv: 0
 --- !u!1001 &2575676061178033922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -903,6 +975,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 358504459922571953, guid: 9878cbeff5ea43f47b2f0f65c0aee96a,
+        type: 3}
+      propertyPath: placeFromTV
+      value: 
+      objectReference: {fileID: 831983290}
+    - target: {fileID: 358504459922571953, guid: 9878cbeff5ea43f47b2f0f65c0aee96a,
+        type: 3}
+      propertyPath: placeFarAway
+      value: 
+      objectReference: {fileID: 489690686}
+    - target: {fileID: 358504459922571953, guid: 9878cbeff5ea43f47b2f0f65c0aee96a,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1273815649}
     - target: {fileID: 889249179661412716, guid: 9878cbeff5ea43f47b2f0f65c0aee96a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -961,37 +1048,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7467897076505059671, guid: 9878cbeff5ea43f47b2f0f65c0aee96a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6118452500185175066}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9878cbeff5ea43f47b2f0f65c0aee96a, type: 3}
---- !u!1 &6118452500185175065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7467897076505059671, guid: 9878cbeff5ea43f47b2f0f65c0aee96a,
-    type: 3}
-  m_PrefabInstance: {fileID: 6118452500185175064}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6118452500185175066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6118452500185175065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e181ca2403780fe45861f5f5ce2ebe4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiMainMenu: {fileID: 1782602116}
-  placeFromTV: {fileID: 831983290}
-  placeFarAway: {fileID: 489690686}
-  playerCamera: {fileID: 1273815649}
-  startFromTV: 0
-  timeToMove: 0.3
-  howCloseToTv: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1005,3 +1063,4 @@ SceneRoots:
   - {fileID: 1600672294}
   - {fileID: 6118452500185175064}
   - {fileID: 1753865949}
+  - {fileID: 1054646930}
