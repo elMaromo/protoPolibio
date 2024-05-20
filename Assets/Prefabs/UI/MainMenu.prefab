@@ -306,7 +306,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 100, y: 250}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &580309016897993006
@@ -512,7 +512,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8495074225230449322}
+      - m_Target: {fileID: 919897801056744213}
         m_TargetAssemblyTypeName: MainMenuButtons, Assembly-CSharp
         m_MethodName: MoveToPlayPlace
         m_Mode: 1
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 8324192237845584453}
   - component: {fileID: 1760084482493678079}
   - component: {fileID: 3003417088087550767}
-  - component: {fileID: 8495074225230449322}
+  - component: {fileID: 919897801056744213}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -583,8 +583,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 31
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8495074225230449322
+--- !u!114 &919897801056744213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -638,13 +638,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5238373023463121384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b15e893fbba9a3b4baf248c1d937a67b, type: 3}
+  m_Script: {fileID: 11500000, guid: 648fbacc91a158b46b37f1d1d4a31098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   placeToPlay: {fileID: 0}
   playerCamera: {fileID: 0}
-  timeToMove: 0.5
-  howCloseToTv: 0.2
+  nextSceneName: Level1Alberto
+  timeToMove: 0.3
+  howCloseToTv: 0
 --- !u!1 &8709243484738577809
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 100, y: 250}
+  m_AnchoredPosition: {x: 100, y: 100}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4193886832815357415
@@ -902,7 +903,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8495074225230449322}
+      - m_Target: {fileID: 919897801056744213}
         m_TargetAssemblyTypeName: MainMenuButtons, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
