@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Quest : MonoBehaviour
 {
     protected bool isCompleted;
-    
+    public string description;
     public Action OnQuestCompleted;
     public abstract void CheckCompleted();
     
