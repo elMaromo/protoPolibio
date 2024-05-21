@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7cbe2fa7a3f16b448cab624fa7f6fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  constantSpeed: 50
+  constantSpeed: 30
   proportionalSpeedMultiplier: 0.33
   stoppingDistance: 0.15
   distanceThreshold: 1
