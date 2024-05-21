@@ -39,9 +39,9 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = direction * speed;
 
-       // if (distanceToMouse <= stoppingDistance)
-        //{
-        //    rb.velocity = Vector2.zero;
-        //}
+        if (distanceToMouse <= stoppingDistance)
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 }

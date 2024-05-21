@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -9,6 +8,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }
 
+    public Transform placeFromTV, placeFarAway, playerCamera;
     public bool startFromTV;
     public float timeToMove;
     public float masterVolume;
@@ -26,6 +26,20 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void Start()
+    {
+        if (startFromTV)
+        {
+            Vector3 posInitPlayer = placeFromTV.position;
+            posInitPlayer += placeFromTV.forward;
+            playerCamera.position = posInitPlayer;
+            playerCamera.rotation = placeFromTV.rotation;
+
+            playerCamera.DOMove(placeFarAway.position, timeToMove);
+            playerCamera.DORotate(placeFarAway.eulerAngles, timeToMove);
+        }
     }
 
     public void LoadScenewithDelay(string sceneName, float delay)
