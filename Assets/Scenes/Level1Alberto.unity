@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88600524753e21b4e816e182e5add767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: Score two goals
   goalsRequired: 2
 --- !u!4 &165864280
 Transform:
@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88600524753e21b4e816e182e5add767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: Score one goal
   goalsRequired: 1
 --- !u!4 &215718430
 Transform:
@@ -1190,6 +1190,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007219215f742104fbc929b0e50249ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _quest1Description: {fileID: 2033131742}
+  _quest2Description: {fileID: 792363698}
+  _quest3Description: {fileID: 784821596}
+  _quest1CheckMark: {fileID: 1050355439}
+  _quest2CheckMark: {fileID: 646808747}
+  _quest3CheckMark: {fileID: 680797521}
 --- !u!1 &544428306
 GameObject:
   m_ObjectHideFlags: 0
@@ -7574,7 +7580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88600524753e21b4e816e182e5add767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: Score three goals
   goalsRequired: 3
 --- !u!4 &1816292101
 Transform:
@@ -7642,7 +7648,7 @@ MonoBehaviour:
   minDir: {x: -1, y: -0.1}
   maxDir: {x: -1, y: -1}
   forceMultiplier: 15
-  EditorSceneName: LevelSelectAlberto
+  EditorSceneName: LevelSelector
 --- !u!1 &1951429106
 GameObject:
   m_ObjectHideFlags: 0

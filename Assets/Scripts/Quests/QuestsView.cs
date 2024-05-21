@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -8,13 +5,13 @@ public class QuestsView : MonoBehaviour
 {
     private QuestsController _questsController;
 
-    private TextMeshProUGUI _quest1Description;
-    private TextMeshProUGUI _quest2Description;
-    private TextMeshProUGUI _quest3Description;
+    [SerializeField] private TextMeshProUGUI _quest1Description;
+    [SerializeField] private TextMeshProUGUI _quest2Description;
+    [SerializeField] private TextMeshProUGUI _quest3Description;
 
-    private GameObject _quest1CheckMark;
-    private GameObject _quest2CheckMark;
-    private GameObject _quest3CheckMark;
+    [SerializeField] private GameObject _quest1CheckMark;
+    [SerializeField] private GameObject _quest2CheckMark;
+    [SerializeField] private GameObject _quest3CheckMark;
 
     public void Init(Quest quest1, Quest quest2, Quest quest3)
     {
@@ -39,7 +36,8 @@ public class QuestsView : MonoBehaviour
             case 3:
                 _quest3CheckMark.SetActive(true);
                 break;
-            default: Debug.LogWarning("Quest with index " + questIndex + " not found");
+            default:
+                Debug.LogWarning("Quest with index " + questIndex + " not found");
                 break;
         }
     }
