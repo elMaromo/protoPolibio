@@ -18,7 +18,6 @@ public class GoToMenuFrom : MonoBehaviour
             Vector3 buttonPressedPosition = tvButton.position;
             buttonPressedPosition.z += 0.02f;
             tvButton.DOMove(buttonPressedPosition, animationTime/2 ).SetLoops(2, LoopType.Yoyo);
-            GameManager.Instance.startFromTV = true;
             Invoke("LoadMenuScene", animationTime);
         }
     }
