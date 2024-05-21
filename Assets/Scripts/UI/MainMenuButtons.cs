@@ -8,20 +8,31 @@ public class MainMenuButtons : MonoBehaviour
 {
     public Transform placeToPlay;
     public Transform playerCamera;
-    public string nextSceneName;
+    public string levelSelectorSceneName;
+    public string optionsSceneName;
     public float timeToMove;
     public float howCloseToTv;
 
-    public void MoveToPlayPlace()
+    public void GoToLevelSelectorScene()
     {
         Vector3 posFinalPlayer = placeToPlay.position;
         posFinalPlayer += placeToPlay.forward * howCloseToTv;
-        playerCamera.DOMove(posFinalPlayer, timeToMove );
+        playerCamera.DOMove(posFinalPlayer, timeToMove);
         playerCamera.DORotate(placeToPlay.eulerAngles, timeToMove);
-        GameManager.Instance.LoadScenewithDelay(nextSceneName, timeToMove);
+        GameManager.Instance.LoadScenewithDelay(levelSelectorSceneName, timeToMove);
         this.gameObject.SetActive(false);
     }
-    
+
+    public void GoToOptionsScene()
+    {
+        Vector3 posFinalPlayer = placeToPlay.position;
+        posFinalPlayer += placeToPlay.forward * howCloseToTv;
+        playerCamera.DOMove(posFinalPlayer, timeToMove);
+        playerCamera.DORotate(placeToPlay.eulerAngles, timeToMove);
+        GameManager.Instance.LoadScenewithDelay(optionsSceneName, timeToMove);
+        this.gameObject.SetActive(false);
+    }
+
 
     public void QuitGame()
     {
