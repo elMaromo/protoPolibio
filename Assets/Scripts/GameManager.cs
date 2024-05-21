@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public bool startFromTV;
     public float timeToMove;
+    public float masterVolume;
+    public float masterBrightness;
 
     private void Awake()
     {

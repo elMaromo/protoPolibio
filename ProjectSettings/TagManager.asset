@@ -16,8 +16,8 @@ TagManager:
   - GameplayVolume
   - MenuVolume
   - PlayerLimit
-  - 
-  - 
+  - OptionsUIColliders
+  - Player
   - 
   - 
   - 
