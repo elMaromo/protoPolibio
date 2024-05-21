@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class SoundSlider : MonoBehaviour
 {
-    
+    public Transform minSoundPos;
 }
