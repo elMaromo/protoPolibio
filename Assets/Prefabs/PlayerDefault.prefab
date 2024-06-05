@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1284794117579247533}
   - component: {fileID: 1916849019185247532}
   - component: {fileID: 6448449630704053667}
+  - component: {fileID: 3090942280644379635}
   m_Layer: 12
   m_Name: PlayerDefault
   m_TagString: Player
@@ -109,10 +110,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7cbe2fa7a3f16b448cab624fa7f6fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  constantSpeed: 50
-  proportionalSpeedMultiplier: 0.33
-  stoppingDistance: 0.15
-  distanceThreshold: 1
+  moveSpeed: 10
+  dashSpeed: 30
+  mouseSensitivity: 0.1
+--- !u!114 &3090942280644379635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859455586189008950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 35f911ffecafdb34faf332a9f0b7721a,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fb93b117-fbf8-4c49-b7e8-f93eca43e0d0
+    m_ActionName: PlayerMap/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Mouse/radius]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 181f6871-c331-4588-9abf-98affc24ed39
+    m_ActionName: PlayerMap/Dash[/Keyboard/space,/Mouse/leftButton,/XInputControllerWindows/buttonEast]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerMap
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &6696185594755825974
 GameObject:
   m_ObjectHideFlags: 0

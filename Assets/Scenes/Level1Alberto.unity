@@ -8221,11 +8221,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerDefault
       objectReference: {fileID: 0}
-    - target: {fileID: 6448449630704053667, guid: bb7c89c8572bd2147aad5d023fc80eb0,
-        type: 3}
-      propertyPath: constantSpeed
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 9207549895965596064, guid: bb7c89c8572bd2147aad5d023fc80eb0,
         type: 3}
       propertyPath: m_LocalPosition.x
