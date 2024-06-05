@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CRTSwitch : AbstractSwitch
+public class BloomSwitch : AbstractSwitch
 {
     public override void ActivateSwitch()
     {
