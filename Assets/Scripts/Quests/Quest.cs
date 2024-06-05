@@ -6,7 +6,7 @@ public abstract class Quest : MonoBehaviour
 {
     protected bool isCompleted;
     public string description;
-    public Action OnQuestCompleted;
+    public event Action OnQuestCompleted;
     public abstract void CheckCompleted();
     
     protected void CompleteQuest()

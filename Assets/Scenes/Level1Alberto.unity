@@ -6084,6 +6084,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1089684832}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
+--- !u!1 &577474982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 577474984}
+  - component: {fileID: 577474983}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &577474983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577474982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eaa98cde4df5214b94195cba4c2ae3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevelName: Level1Alberto
+  _screenGameObject: {fileID: 1326489449}
+  _defaultScreenMat: {fileID: 2100000, guid: d77aef522db357a46a9f56c765febe5e, type: 2}
+  _whiteNoiseScreenMat: {fileID: 2100000, guid: 4ca9b9b9ede43724a91c78041f3baee3,
+    type: 2}
+--- !u!4 &577474984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577474982}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &581950289
 GameObject:
   m_ObjectHideFlags: 0
@@ -6832,9 +6881,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f58cfecd17737dd4fbbf627c3773470d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _quest1: {fileID: 215718429}
-  _quest2: {fileID: 165864279}
-  _quest3: {fileID: 1816292100}
+  questsAmount: 3
+  quest1: {fileID: 215718429}
+  quest2: {fileID: 165864279}
+  quest3: {fileID: 1816292100}
   questsView: {fileID: 480573031}
 --- !u!4 &1259496976
 Transform:
@@ -6854,6 +6904,12 @@ Transform:
   - {fileID: 1816292101}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1326489449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9041514512100513798, guid: 3e90fe9b309f4ac4da5bd74b5b4f8912,
+    type: 3}
+  m_PrefabInstance: {fileID: 4510685970411899428}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1361423977
 GameObject:
   m_ObjectHideFlags: 0
@@ -7162,12 +7218,12 @@ GameObject:
   - component: {fileID: 1562821140}
   - component: {fileID: 1562821139}
   m_Layer: 0
-  m_Name: TVGlass
+  m_Name: ScreenNoReflections
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1562821139
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7249,7 +7305,7 @@ Transform:
   m_GameObject: {fileID: 1562821138}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -3.8}
+  m_LocalPosition: {x: -0.6, y: 0, z: -8}
   m_LocalScale: {x: 4, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7486,6 +7542,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoBackToMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 2037851093701066689, guid: edbb12a3519ef1f40b253404e826885c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3269377196434661761, guid: edbb12a3519ef1f40b253404e826885c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7648,7 +7709,6 @@ MonoBehaviour:
   minDir: {x: -1, y: -0.1}
   maxDir: {x: -1, y: -1}
   forceMultiplier: 15
-  EditorSceneName: LevelSelector
 --- !u!1 &1951429106
 GameObject:
   m_ObjectHideFlags: 0
@@ -8221,6 +8281,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerDefault
       objectReference: {fileID: 0}
+    - target: {fileID: 8170102616566951393, guid: bb7c89c8572bd2147aad5d023fc80eb0,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9207549895965596064, guid: bb7c89c8572bd2147aad5d023fc80eb0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8422,6 +8487,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3757142298432411927, guid: 3e90fe9b309f4ac4da5bd74b5b4f8912,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d77aef522db357a46a9f56c765febe5e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8776,6 +8846,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameplayVolume
       objectReference: {fileID: 0}
+    - target: {fileID: 2449963525233396046, guid: 9d5ab3acba8c20045b685c93c1216fca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9006712075352294617, guid: 9d5ab3acba8c20045b685c93c1216fca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8891,3 +8966,4 @@ SceneRoots:
   - {fileID: 480573030}
   - {fileID: 1259496976}
   - {fileID: 1788684333}
+  - {fileID: 577474984}

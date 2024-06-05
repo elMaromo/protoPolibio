@@ -14,10 +14,9 @@ public class BallSpawner2 : MonoBehaviour
     public Vector2 minDir;
     public Vector2 maxDir;
     public float forceMultiplier;
-    public string EditorSceneName;
-
     private int ballsAvailable;
 
+    public event Action OnBallsEmpty; 
 
     private void Start()
     {
@@ -36,7 +35,7 @@ public class BallSpawner2 : MonoBehaviour
         if (ballsAvailable <= 0)
         {
             //ballImage.color=new Color(ballImage.color.r,ballImage.color.g,ballImage.color.b,.1f);
-            SceneManager.LoadScene(EditorSceneName);
+            OnBallsEmpty?.Invoke();
             return;
         }
         ballsAvailable--;

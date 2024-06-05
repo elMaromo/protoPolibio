@@ -6,6 +6,7 @@ public class BallControllerV2 : MonoBehaviour
     private Rigidbody2D rb;
     private BallSpawner2 _ballSpawner;
     private bool isAlive;
+    [SerializeField] private float _destroySpeedThreshold = .1f;
 
     public void Init(BallSpawner2 ballSpawner, Vector2 force)
     {
@@ -35,7 +36,7 @@ public class BallControllerV2 : MonoBehaviour
 
     private void Update()
     {
-        if (rb.velocity.magnitude < .1)
+        if (rb.velocity.magnitude < _destroySpeedThreshold)
         {
             DestroyBall();
         }
