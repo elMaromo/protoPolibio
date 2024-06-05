@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class OptionSlot : MonoBehaviour
 {
-    private OptionsController optionsController;
+    
     public GameObject optionsThing;
+
+    private OptionsController optionsController;
 
     private void Start()
     {

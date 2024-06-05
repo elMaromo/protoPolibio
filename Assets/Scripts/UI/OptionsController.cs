@@ -20,6 +20,10 @@ public class OptionsController : MonoBehaviour
     public void OnSlotTriggered(GameObject slot)
     {
         if (!canSelect) return;
+        if (currentSlot == slot)
+        {
+            return;
+        }
         UpdateSlots(slot);
         DeselectPrevious();
         SelectCurrent();
@@ -27,10 +31,6 @@ public class OptionsController : MonoBehaviour
 
     private void UpdateSlots(GameObject slot)
     {
-        if (slot == currentSlot)
-        {
-            return;
-        }
         previousSlot = currentSlot;
         currentSlot = slot;
     }
