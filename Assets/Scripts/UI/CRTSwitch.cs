@@ -6,7 +6,11 @@ public class CRTSwitch : AbstractSwitch
 {
     public override void ActivateSwitch()
     {
-        base.ActivateSwitch();
+        print("hola");
+    }
 
+    public override void DeActivateSwitch()
+    {
+        print("Adios");
     }
 }
