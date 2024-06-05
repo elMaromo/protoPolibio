@@ -6116,7 +6116,7 @@ MonoBehaviour:
   nextLevelName: Level1Alberto
   _screenGameObject: {fileID: 1326489449}
   _defaultScreenMat: {fileID: 2100000, guid: d77aef522db357a46a9f56c765febe5e, type: 2}
-  _whiteNoiseScreenMat: {fileID: 2100000, guid: 4ca9b9b9ede43724a91c78041f3baee3,
+  _whiteNoiseScreenMat: {fileID: 2100000, guid: bef0b6561b4e15944b8f29a53d3bceb6,
     type: 2}
 --- !u!4 &577474984
 Transform:
