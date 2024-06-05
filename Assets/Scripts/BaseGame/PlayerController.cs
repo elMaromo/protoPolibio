@@ -65,13 +65,13 @@ public class PlayerController : MonoBehaviour
 
     private void StartDash()
     {
-        print("StartDash");
+        //print("StartDash");
         isDashing = true;
     }
 
     private void StopDash()
     {
-        print("StopDash");
+        //print("StopDash");
         isDashing = false;
     }
 /*
