@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public float masterVolume;
     public float masterBrightness;
 
+    private int maxFps = 144;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -22,12 +24,14 @@ public class GameManager : MonoBehaviour
         else
         {
             _instance = this;
+            QualitySettings.vSyncCount = 1;
+            Application.targetFrameRate = maxFps;
         }
 
         DontDestroyOnLoad(gameObject);
     }
 
-    
+
 
     public void LoadScenewithDelay(string sceneName, float delay)
     {

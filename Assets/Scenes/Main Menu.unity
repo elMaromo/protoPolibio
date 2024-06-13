@@ -382,7 +382,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5497455880228965192, guid: 3e90fe9b309f4ac4da5bd74b5b4f8912,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7450200440654170775, guid: 3e90fe9b309f4ac4da5bd74b5b4f8912,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761728119450052453, guid: 3e90fe9b309f4ac4da5bd74b5b4f8912,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -672,6 +682,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TV2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144538592148155055, guid: b8033f6a3e8e2f543903bfe504b5ef07,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5860616675730620204, guid: b8033f6a3e8e2f543903bfe504b5ef07,
         type: 3}
@@ -1136,6 +1151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467897076505059671, guid: 9878cbeff5ea43f47b2f0f65c0aee96a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
