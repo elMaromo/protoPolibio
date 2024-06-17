@@ -130,7 +130,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2711907367804230874}
   - component: {fileID: 7226798552215032881}
-  - component: {fileID: 5227724771215361212}
   - component: {fileID: 5312941799725993677}
   m_Layer: 13
   m_Name: Goal
@@ -184,19 +183,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5227724771215361212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6962493028714577187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0cb3ddeb5b70f14dacdf53d71867b49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particles: {fileID: 0}
 --- !u!114 &5312941799725993677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +190,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6962493028714577187}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a38806e2e6aed784e8a968732904562b, type: 3}
   m_Name: 
