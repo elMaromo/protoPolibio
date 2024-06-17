@@ -14,6 +14,6 @@ public class MoveUpAndDown : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.DOMoveY(moveAmount, timeToMove).SetLoops(-1, LoopType.Yoyo);
+        rb.DOMoveY(moveAmount, timeToMove).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutQuad).SetRelative(true);
     }
 }
