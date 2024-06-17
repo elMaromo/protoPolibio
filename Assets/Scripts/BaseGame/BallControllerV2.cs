@@ -20,18 +20,26 @@ public class BallControllerV2 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void DestroyBall()
+    public void DestroyBall(bool withVisuals=true)
     {
         if (!isAlive) return;
         isAlive = false;
-        transform.DOScale(Vector3.zero, 1)
-            .SetEase(Ease.InBack)
-            .Play()
-            .OnComplete(() =>
-            {
-                _ballSpawner.OnBallDestroyed();
-                Destroy(gameObject);
-            });
+        if (!withVisuals)
+        {
+            _ballSpawner.OnBallDestroyed();
+            Destroy(gameObject);
+        }
+        else
+        {
+            transform.DOScale(Vector3.zero, 1)
+                .SetEase(Ease.InBack)
+                .Play()
+                .OnComplete(() =>
+                {
+                    _ballSpawner.OnBallDestroyed();
+                    Destroy(gameObject);
+                });
+        }
     }
 
     private void Update()
