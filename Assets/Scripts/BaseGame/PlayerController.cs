@@ -9,7 +9,15 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float dashSpeed = 10f;
     public float mouseSensitivity = 0.1f;
-
+    
+    [Header("Mouse Controls")]
+    public float constantSpeed = 5f; // Velocidad constante cuando el ratón está lejos
+    public float proportionalSpeedMultiplier = 0.5f; 
+    public float stoppingDistance = 0.1f; // Distancia de seguridad para detenerse
+    public float distanceThreshold = 1.5f; //Distancia a partir la cual la velocidad será constante
+    private Vector3 targetPosition;
+    private Camera cam;
+    
     private void Awake()
     {
         controls = new PlayerActionsMap();
@@ -22,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         Cursor.visible = false;
+        cam=Camera.main;
     }
 
     private void OnEnable()
@@ -61,8 +70,30 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = totalMovement;
         }
-    }
+        
+        //MOVIMIENTO CON RATON
+        var position = transform.position;
+        float distanceToMouse = Vector2.Distance(position, targetPosition);
 
+        Vector2 direction = (targetPosition - position).normalized;
+        //print(direction);
+
+        float speed = distanceToMouse > distanceThreshold
+            ? constantSpeed
+            : constantSpeed * (distanceToMouse / distanceThreshold) * proportionalSpeedMultiplier;
+
+        rb.velocity = direction * speed;
+
+        if (distanceToMouse <= stoppingDistance)
+        {
+            rb.velocity = Vector2.zero;
+        }
+    }
+    private void Update()
+    {
+        targetPosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        targetPosition.z = 0f;
+    }
     private void StartDash()
     {
         //print("StartDash");
@@ -137,31 +168,7 @@ public class PlayerController : MonoBehaviour
         cam = Camera.main;
         Cursor.visible = false;
     }
+*/
 
-    private void Update()
-    {
-        targetPosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        targetPosition.z = 0f;
-    }
-
-    private void FixedUpdate()
-    {
-        var position = transform.position;
-        float distanceToMouse = Vector2.Distance(position, targetPosition);
-
-        Vector2 direction = (targetPosition - position).normalized;
-        //print(direction);
-
-        float speed = distanceToMouse > distanceThreshold
-            ? constantSpeed
-            : constantSpeed * (distanceToMouse / distanceThreshold) * proportionalSpeedMultiplier;
-
-        rb.velocity = direction * speed;
-
-        if (distanceToMouse <= stoppingDistance)
-        {
-            rb.velocity = Vector2.zero;
-        }
-    }
-    */
+    
 }

@@ -115,17 +115,6 @@ public partial class @PlayerActionsMap: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9fe1dbb7-f6a8-4259-b3e7-04c02a516653"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""eedf07f0-9a96-4e9b-bb70-ee04cdf08292"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
