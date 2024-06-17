@@ -2,56 +2,67 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class BallSpawner2 : MonoBehaviour
 {
     public int initialBallsAmount = 3;
+    public float spawnDelaySeconds = 2;
+    public float BallsRate = 1;
+    public float forceMultiplier=20;
+    public float ballsDispersion = 10;
     public BallControllerV2 ballPrefab;
     public TextMeshProUGUI ballsText;
+    public Image ballsImage;
     public Vector2 minDir;
     public Vector2 maxDir;
-    public float forceMultiplier;
     private int ballsAvailable;
-
+    private int destroyedBallsCounter;
     public event Action OnBallsEmpty; 
 
     private void Start()
     {
         ballsAvailable = initialBallsAmount;
         UpdateBallsText();
-        SpawnBallInSeconds(2);
+        SpawnBallInSeconds(spawnDelaySeconds);
     }
 
     public void OnBallDestroyed()
     {
-        SpawnBallInSeconds(2);
+        destroyedBallsCounter++;
+        if(destroyedBallsCounter<BallsRate){return;}
+        
+        SpawnBallInSeconds(spawnDelaySeconds);
+        destroyedBallsCounter = 0;
     }
 
     private void SpawnBallInSeconds(float seconds)
     {
         if (ballsAvailable <= 0)
         {
-            //ballImage.color=new Color(ballImage.color.r,ballImage.color.g,ballImage.color.b,.1f);
+            ballsImage.color=new Color(ballsImage.color.r,ballsImage.color.g,ballsImage.color.b,.1f);
             OnBallsEmpty?.Invoke();
             return;
         }
-        ballsAvailable--;
-        
-        StartCoroutine(SpawnBallCoroutine(seconds));
+        for (int i = 0; i < BallsRate; i++)
+        {
+            StartCoroutine(SpawnBallCoroutine(seconds));
+        }
     }
 
     private IEnumerator SpawnBallCoroutine(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         UpdateBallsText();
+
         var ball = Instantiate(ballPrefab, transform.position, Quaternion.identity);
         var forceX = Random.Range(minDir.x, maxDir.x);
         var forceY = Random.Range(minDir.y, maxDir.y);
         Vector2 ballForce = new Vector2(forceX,forceY);
-        ball.Init(this,ballForce*forceMultiplier);
+        ball.Init(this,ballForce*Random.Range(forceMultiplier-10,forceMultiplier+10));
+        ballsAvailable--;
     }
 
     private void UpdateBallsText()
