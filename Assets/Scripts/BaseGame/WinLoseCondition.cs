@@ -59,8 +59,7 @@ public class WinLoseCondition : MonoBehaviour
         print("GAMEOVER");
         _screenMeshRenderer.material = _whiteNoiseScreenMat;
         yield return new WaitForSeconds(1.3f);
-        _screenMeshRenderer.material = _defaultScreenMat;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
 
     private void OnDestroy()
