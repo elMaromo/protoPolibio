@@ -8,7 +8,7 @@ public class MoveUpAndDown : MonoBehaviour
     public float moveAmount;
     public float timeToMove;
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
