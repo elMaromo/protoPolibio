@@ -76,7 +76,6 @@ public class PlayerController : MonoBehaviour
         float distanceToMouse = Vector2.Distance(position, targetPosition);
 
         Vector2 direction = (targetPosition - position).normalized;
-        //print(direction);
 
         float speed = distanceToMouse > distanceThreshold
             ? constantSpeed
