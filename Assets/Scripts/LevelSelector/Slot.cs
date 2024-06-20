@@ -29,21 +29,6 @@ public class Slot : MonoBehaviour
         }
     }
 
-
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            ChangeToNextLevel();
-        }
-
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            ChangeToPreviousLevel();
-        }
-    }
-
     public void ChangeToNextLevel()
     {
         if (!changingLevels)
