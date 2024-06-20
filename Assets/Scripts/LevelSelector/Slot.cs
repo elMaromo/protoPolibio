@@ -53,7 +53,7 @@ public class Slot : MonoBehaviour
         }
     }
 
-    public void NextLevel()
+    private void NextLevel()
     {
         changingLevels = false;
         transform.position = originalPos;
@@ -72,7 +72,7 @@ public class Slot : MonoBehaviour
         }
     }
 
-    public void PreviousLevel()
+    private void PreviousLevel()
     {
         changingLevels = false;
         transform.position = originalPos;
