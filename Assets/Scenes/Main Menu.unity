@@ -847,7 +847,7 @@ PrefabInstance:
     - target: {fileID: 919897801056744213, guid: cd0b4ae9d96569849b96d3b7f3ede7c6,
         type: 3}
       propertyPath: levelSelectorSceneName
-      value: LevelSelector
+      value: Selector
       objectReference: {fileID: 0}
     - target: {fileID: 3013589363275082563, guid: cd0b4ae9d96569849b96d3b7f3ede7c6,
         type: 3}
