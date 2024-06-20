@@ -11,8 +11,7 @@ public class BallSpawner2 : MonoBehaviour
     public int initialBallsAmount = 3;
     public float spawnDelaySeconds = 2;
     public float BallsRate = 1;
-    public float forceMultiplier=20;
-    public float ballsDispersion = 10;
+    public float forceMultiplier = 20;
     public BallControllerV2 ballPrefab;
     public TextMeshProUGUI ballsText;
     public Image ballsImage;
@@ -20,7 +19,7 @@ public class BallSpawner2 : MonoBehaviour
     public Vector2 maxDir;
     private int ballsAvailable;
     private int destroyedBallsCounter;
-    public event Action OnBallsEmpty; 
+    public event Action OnBallsEmpty;
 
     private void Start()
     {
@@ -32,8 +31,11 @@ public class BallSpawner2 : MonoBehaviour
     public void OnBallDestroyed()
     {
         destroyedBallsCounter++;
-        if(destroyedBallsCounter<BallsRate){return;}
-        
+        if (destroyedBallsCounter < BallsRate)
+        {
+            return;
+        }
+
         SpawnBallInSeconds(spawnDelaySeconds);
         destroyedBallsCounter = 0;
     }
@@ -42,11 +44,12 @@ public class BallSpawner2 : MonoBehaviour
     {
         if (ballsAvailable <= 0)
         {
-            ballsImage.color=new Color(ballsImage.color.r,ballsImage.color.g,ballsImage.color.b,.1f);
+            ballsImage.color = new Color(ballsImage.color.r, ballsImage.color.g, ballsImage.color.b, .1f);
             OnBallsEmpty?.Invoke();
             return;
         }
-        for (int i = 0; i < BallsRate; i++)
+
+        for (int i = 0; i < Mathf.Min(BallsRate,ballsAvailable); i++)
         {
             StartCoroutine(SpawnBallCoroutine(seconds));
         }
@@ -55,14 +58,14 @@ public class BallSpawner2 : MonoBehaviour
     private IEnumerator SpawnBallCoroutine(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        UpdateBallsText();
 
         var ball = Instantiate(ballPrefab, transform.position, Quaternion.identity);
         var forceX = Random.Range(minDir.x, maxDir.x);
         var forceY = Random.Range(minDir.y, maxDir.y);
-        Vector2 ballForce = new Vector2(forceX,forceY);
-        ball.Init(this,ballForce*Random.Range(forceMultiplier-10,forceMultiplier+10));
+        Vector2 ballForce = new Vector2(forceX, forceY);
+        ball.Init(this, ballForce * Random.Range(forceMultiplier - 10, forceMultiplier + 10));
         ballsAvailable--;
+        UpdateBallsText();
     }
 
     private void UpdateBallsText()
@@ -72,8 +75,8 @@ public class BallSpawner2 : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color=Color.green;
-        Gizmos.DrawLine(transform.position,transform.position+(Vector3)minDir*forceMultiplier);
-        Gizmos.DrawLine(transform.position,transform.position+(Vector3)maxDir*forceMultiplier);
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3)minDir * forceMultiplier);
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3)maxDir * forceMultiplier);
     }
 }
