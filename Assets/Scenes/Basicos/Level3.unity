@@ -1346,7 +1346,7 @@ PrefabInstance:
     - target: {fileID: 6742593712712790598, guid: edbb12a3519ef1f40b253404e826885c,
         type: 3}
       propertyPath: menuSceneName
-      value: BaseLevel
+      value: LevelSelector
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -25,7 +25,7 @@ public class Goal : MonoBehaviour
     {
         OnGoalScored?.Invoke();
         _ball.DestroyBall();
-        cam.Shake();
         particles.Play();
+        cam.Shake();
     }
 }
