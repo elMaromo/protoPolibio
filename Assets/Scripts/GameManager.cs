@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class GameManager : MonoBehaviour
     public float timeToMove;
     public float masterVolume;
     public float masterBrightness;
-
+    public bool DebugMode;
     private int maxFps = 144;
 
     private void Awake()
@@ -31,7 +32,16 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-
+    private void Update()
+    {
+        if (DebugMode)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+    }
 
     public void LoadScenewithDelay(string sceneName, float delay)
     {

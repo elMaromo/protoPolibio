@@ -229,6 +229,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 5.43
       objectReference: {fileID: 0}
+    - target: {fileID: 1686122537157099730, guid: 85f414e5ec23df143b0f755e71f73386,
+        type: 3}
+      propertyPath: _destroyParticles
+      value: 
+      objectReference: {fileID: 5894337980611479868, guid: 821a94eedd125614a9f0abbf2be339de,
+        type: 3}
     - target: {fileID: 2090037851654820977, guid: 85f414e5ec23df143b0f755e71f73386,
         type: 3}
       propertyPath: m_Name
@@ -239,11 +245,23 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4067269804483332866, guid: 85f414e5ec23df143b0f755e71f73386,
+        type: 3}
+      propertyPath: _destroyParticles
+      value: 
+      objectReference: {fileID: 5894337980611479868, guid: 821a94eedd125614a9f0abbf2be339de,
+        type: 3}
     - target: {fileID: 4306549583637714374, guid: 85f414e5ec23df143b0f755e71f73386,
         type: 3}
       propertyPath: initialBallsAmount
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4313238884772968107, guid: 85f414e5ec23df143b0f755e71f73386,
+        type: 3}
+      propertyPath: _destroyParticles
+      value: 
+      objectReference: {fileID: 5894337980611479868, guid: 821a94eedd125614a9f0abbf2be339de,
+        type: 3}
     - target: {fileID: 4368808693836022232, guid: 85f414e5ec23df143b0f755e71f73386,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -299,6 +317,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.23
       objectReference: {fileID: 0}
+    - target: {fileID: 8599687028605858503, guid: 85f414e5ec23df143b0f755e71f73386,
+        type: 3}
+      propertyPath: _destroyParticles
+      value: 
+      objectReference: {fileID: 5894337980611479868, guid: 821a94eedd125614a9f0abbf2be339de,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
