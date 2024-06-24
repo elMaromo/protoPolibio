@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -44,8 +43,8 @@ public class BallSpawner2 : MonoBehaviour
     {
         if (ballsAvailable <= 0)
         {
-            ballsImage.color = new Color(ballsImage.color.r, ballsImage.color.g, ballsImage.color.b, .1f);
             OnBallsEmpty?.Invoke();
+            ballsImage.color = new Color(ballsImage.color.r, ballsImage.color.g, ballsImage.color.b, .1f);
             return;
         }
 

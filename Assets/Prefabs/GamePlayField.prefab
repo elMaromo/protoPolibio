@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f7b0fec7efd384bb77f070dada4ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyParticles: {fileID: 5894337980611479868, guid: dbb18fd89c02b5b469bb1817a87af8b7,
+  _destroyParticles: {fileID: 5894337980611479868, guid: 821a94eedd125614a9f0abbf2be339de,
     type: 3}
 --- !u!1 &2090037851654820977
 GameObject:
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f7b0fec7efd384bb77f070dada4ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyParticles: {fileID: 5894337980611479868, guid: dbb18fd89c02b5b469bb1817a87af8b7,
+  _destroyParticles: {fileID: 5894337980611479868, guid: 821a94eedd125614a9f0abbf2be339de,
     type: 3}
 --- !u!1 &3560408525583808903
 GameObject:
@@ -703,7 +703,7 @@ MonoBehaviour:
   ballPrefab: {fileID: 5705675258900350995, guid: 048920158ee0bfa4c9185fe9d1047a97,
     type: 3}
   ballsText: {fileID: 1627169825650709573}
-  ballsImage: {fileID: 0}
+  ballsImage: {fileID: 4739898007470294863}
   minDir: {x: -1, y: -0.1}
   maxDir: {x: -1, y: -1}
 --- !u!1 &4880406267335827901
@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f7b0fec7efd384bb77f070dada4ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyParticles: {fileID: 5894337980611479868, guid: dbb18fd89c02b5b469bb1817a87af8b7,
+  _destroyParticles: {fileID: 5894337980611479868, guid: 821a94eedd125614a9f0abbf2be339de,
     type: 3}
 --- !u!1 &7985790270306529573
 GameObject:
@@ -1478,7 +1478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f7b0fec7efd384bb77f070dada4ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyParticles: {fileID: 5894337980611479868, guid: dbb18fd89c02b5b469bb1817a87af8b7,
+  _destroyParticles: {fileID: 5894337980611479868, guid: 821a94eedd125614a9f0abbf2be339de,
     type: 3}
 --- !u!1 &8230030674293843624
 GameObject:
@@ -1599,6 +1599,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1284794117579247533, guid: bb7c89c8572bd2147aad5d023fc80eb0,
         type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284794117579247533, guid: bb7c89c8572bd2147aad5d023fc80eb0,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284794117579247533, guid: bb7c89c8572bd2147aad5d023fc80eb0,
+        type: 3}
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
@@ -1611,6 +1621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448449630704053667, guid: bb7c89c8572bd2147aad5d023fc80eb0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6448449630704053667, guid: bb7c89c8572bd2147aad5d023fc80eb0,
         type: 3}
@@ -1680,6 +1695,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7864679974001596026}
+    - targetCorrespondingSourceObject: {fileID: 2859455586189008950, guid: bb7c89c8572bd2147aad5d023fc80eb0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 25471020597328195}
   m_SourcePrefab: {fileID: 100100000, guid: bb7c89c8572bd2147aad5d023fc80eb0, type: 3}
 --- !u!1 &3172671059710132129 stripped
 GameObject:
@@ -1735,6 +1754,24 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &25471020597328195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172671059710132129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63314dc8b916f71448a103747e4f1578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 1517381033648019730, guid: cdb7f765e4eca47489d13baa6ee2bafb,
+    type: 3}
+  forceMultiply: 40
+  maxForce: 500
+  maxArrowLength: 3
+  mouseTransform: {fileID: 0}
 --- !u!4 &8389799185797645879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9207549895965596064, guid: bb7c89c8572bd2147aad5d023fc80eb0,
