@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -8,6 +9,9 @@ public class ChangeLevelButton : MonoBehaviour
     public bool isUp;
     public float amountMove;
     public float animDuration;
+    public int firstNoExtraSlot;
+    public int lastNoExtraSlot;
+    public int maxLevel;
     public Transform buttonTr;
 
     private bool duringActivation;
@@ -36,6 +40,16 @@ public class ChangeLevelButton : MonoBehaviour
     public void ActivateButton()
     {
         buttonTr.DOMoveY(-amountMove, animDuration).SetRelative(true).OnComplete(ReactivateButton);
+
+        if( Int32.Parse(slots[firstNoExtraSlot].textSlot.text)== 1 && isUp )
+        {
+            return;
+        }
+
+        if( Int32.Parse(slots[lastNoExtraSlot].textSlot.text)== maxLevel && !isUp )
+        {
+            return;
+        }
 
         for (int currSlot = 0; currSlot < slots.Count; currSlot++)
         {

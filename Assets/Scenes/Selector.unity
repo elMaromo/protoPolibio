@@ -833,6 +833,9 @@ MonoBehaviour:
   isUp: 1
   amountMove: 1
   animDuration: 0.2
+  firstNoExtraSlot: 2
+  lastNoExtraSlot: 5
+  maxLevel: 20
   buttonTr: {fileID: 1357564294}
   slots:
   - {fileID: 1746584439}
@@ -1842,6 +1845,9 @@ MonoBehaviour:
   isUp: 0
   amountMove: 1
   animDuration: 0.2
+  firstNoExtraSlot: 2
+  lastNoExtraSlot: 5
+  maxLevel: 20
   buttonTr: {fileID: 1448035987}
   slots:
   - {fileID: 1746584439}
