@@ -1,25 +1,57 @@
 using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    public TextMeshProUGUI textSlot;
-    public string levelName;
-    private LevelController _levelController;
     public float amountMoveUp;
     public float animChangeLevelduration;
-    private bool changingLevels;
+    public string levelName;
+    public List<GameObject>stars;
+    public TextMeshProUGUI textSlot;
 
+    private bool changingLevels;
+    private int numStars;
     private Vector3 originalPos;
+    private LevelController _levelController;
 
     private void Start()
     {
         changingLevels = false;
         _levelController = FindObjectOfType<LevelController>();
         originalPos = transform.position;
+        numStars = GameManager.Instance.levelStars[Int32.Parse(textSlot.text)];
+        ActivateStars();
     }
+
+
+    private void ActivateStars()
+    {
+        stars[0].SetActive(false);
+        stars[1].SetActive(false);
+        stars[2].SetActive(false);
+
+        if( numStars > 0 )
+        {
+            stars[0].SetActive(true);
+        }
+
+        if( numStars > 1 )
+        {
+            stars[1].SetActive(true);
+        }
+
+        if( numStars > 2 )
+        {
+            stars[2].SetActive(true);
+        }
+    }
+
+
+
+
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -46,6 +78,8 @@ public class Slot : MonoBehaviour
         currentLevel++;
         textSlot.text = currentLevel.ToString();
         levelName = "Level" + currentLevel.ToString();
+        numStars = GameManager.Instance.levelStars[Int32.Parse(textSlot.text)];
+        ActivateStars();
     }
 
     public void ChangeToPreviousLevel()
@@ -65,6 +99,8 @@ public class Slot : MonoBehaviour
         currentLevel--;
         textSlot.text = currentLevel.ToString();
         levelName = "Level" + currentLevel.ToString();
+        numStars = GameManager.Instance.levelStars[Int32.Parse(textSlot.text)];
+        ActivateStars();
     }
 
     public string GetLast(string source, int numberOfCharacters)

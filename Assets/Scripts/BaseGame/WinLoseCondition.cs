@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +21,7 @@ public class WinLoseCondition : MonoBehaviour
         _questsController = FindObjectOfType<QuestsController>();
 
         _ballSpawner.OnBallsEmpty += CheckWinLose;
+        _questsController.OnAllQuestsCompleted += CheckWinLose;
 
         _screenMeshRenderer = _screenGameObject.GetComponent<MeshRenderer>();
         _screenMeshRenderer.material = _defaultScreenMat;
@@ -51,6 +53,9 @@ public class WinLoseCondition : MonoBehaviour
     {
         print("VICTORY!!");
         yield return new WaitForSeconds(1);
+        string sceneName = SceneManager.GetActiveScene().name;
+        int currentLevel = Int32.Parse(sceneName.Substring(sceneName.Length-1));
+        GameManager.Instance.levelStars[currentLevel] = _questsController.NumberOfQuestsCompleted;
         SceneManager.LoadScene(nextLevelName);
     }
 
@@ -65,5 +70,6 @@ public class WinLoseCondition : MonoBehaviour
     private void OnDestroy()
     {
         _ballSpawner.OnBallsEmpty -= CheckWinLose;
+        _questsController.OnAllQuestsCompleted -= CheckWinLose;
     }
 }

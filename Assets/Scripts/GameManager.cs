@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     public float masterVolume;
     public float masterBrightness;
     public bool DebugMode;
-    private int maxFps = 144;
+    public int maxFps = 144;
+
+    public int[] levelStars;
 
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            levelStars = new int[100];
             _instance = this;
             QualitySettings.vSyncCount = 1;
             Application.targetFrameRate = maxFps;
